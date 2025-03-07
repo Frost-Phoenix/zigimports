@@ -65,7 +65,7 @@
           in
           {
             type = "app";
-            program = "${pkg}/bin/zigimports";
+            program = "${pkg}/bin/zigimports-x86_64-linux";
           };
 
         # nix run .#zon2json-lock
