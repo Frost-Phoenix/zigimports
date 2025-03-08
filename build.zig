@@ -13,11 +13,7 @@ pub fn build(b: *std.Build) !void {
     b.installArtifact(lib);
 
     const exe = b.addExecutable(.{
-        .name = try std.fmt.allocPrint(
-            std.heap.page_allocator,
-            "zigimports-{s}-{s}",
-            .{ @tagName(target.result.cpu.arch), @tagName(target.result.os.tag) },
-        ),
+        .name = "zigimports",
         .root_source_file = b.path("src/main.zig"),
         .target = target,
         .optimize = optimize,
